@@ -1,70 +1,105 @@
-conductores = ["Laura", "Mateo", "Julian"]
+# Listas iniciales
+conductores = ["Laura", "Mateo", "Julián"]
 vehiculos = ["Moto", "Carro", "Bicicleta"]
 
-
-if conductores[2] == "Julian":
+# 1. Si "Julián" está en conductores, añade "Santiago"
+if "Julián" in conductores:
     conductores.append("Santiago")
     print(conductores)
     
 print()
-    
-if vehiculos[1] == "Carro":
+
+# 2. Si "Carro" está en vehiculos, añade "Camioneta"
+if "Carro" in vehiculos:
     vehiculos.append("Camioneta")
     print(vehiculos)
-print("")
     
-if conductores[1] == "Mateo":
+print()
+
+# 3. Si "Mateo" está en conductores, eliminarlo
+if "Mateo" in conductores:
     conductores.remove("Mateo")
     print(conductores)
     
 print()
-    
+
+# 4. Si hay más de 3 elementos en vehiculos, eliminar el primero
 if len(vehiculos) > 3:
-    vehiculos.remove(vehiculos[0])
+    vehiculos.pop(0) # elimina el primer elemento
     print(vehiculos)
     
 print()
 
-if conductores[0] == "Laura":
-    conductores[0].remove("Laura")
+# 5. Si "Laura" está en conductores, reemplazarla por "Luisa"
+if "Laura" in conductores:
+    conductores.remove("Laura")
     conductores.append("Luisa")
     conductores.sort()
     print(conductores)
+    
+print()
+
+# 6. Crear lista habilitados con los dos primeros elementos de conductores
+habilitados = conductores[:2]
+print(habilitados)
+
+print()
+# 7. Crear lista movilidad con los dos últimos elementos de vehiculos
+movilidad = vehiculos[-2:]
+print(movilidad)
+
+print()
+# 8. Si "Camioneta" está en vehiculos, crear tupla
+vehiculo_extra = ()
+if "Camioneta" in vehiculos:
+    vehiculo_extra = ("Camioneta", "Disponible")
+    print(vehiculo_extra)
 
 print()
 
-habilitados = [conductores[0], conductores[1]]
-movilidad = [vehiculos[0], vehiculos[1]]
-
-if vehiculos[2] == "Camioneta":
-    vehiculos_extra = ("Camioneta", "Disponible")
-    print(vehiculos_extra)
-    
-print()
-    
-if habilitados[1] == "Luisa":
-    habilitados.append("Licencia Activa")
+# 9. Si "Luisa" está en habilitados, añadir "Licencia Activa"
+if "Luisa" in habilitados:
+    habilitados.append("licencia activa")
     print(habilitados)
     
 print()
 
-if habilitados[2] == "Licencia Activa":
-    registro = {
+# 10. Si "Licencia Activa" está en habilitados, crear diccionario registro
+
+if "licencia activa" in habilitados:
+    registros = {
         "conductor": "Luisa",
-        "Vehiculo_asignado": "Carror",
-        "vigente": "True"
+        "vehiculo_asignado": "Carro",
+        "vigente": True
     }
-    print(registro)
+    print(registros)
 print()
 
-if registro == registro:
-    registro["ciudad"] = "bogota"
-    print(registro)
+# 11. Si existe registro, añadir "ciudad": "Bogotá"
+if registros:
+    registros["ciudad"] = "Bogotá"
+    print(registros)
 
-print(vehiculos)
+print()
 
-print(conductores)
-print(vehiculos)
-print(habilitados)
-print(movilidad)
-print(registro)
+# 12. Si "Bicicleta" no está en vehiculos, agregarla
+if "Bicicleta" in vehiculos:
+    vehiculos.append("Bicicleta")
+    print(vehiculos)
+
+print()
+
+# 13. Si "Julián" no está en conductores, agregarlo
+if "Julián" not in conductores:
+    conductores.append("Julián")
+    print(conductores)
+    
+print()
+
+# 14. Mostrar listas y estructuras
+print("Conductores:", conductores)
+print("Vehículos:", vehiculos)
+print("Habilitados:", habilitados)
+print("Movilidad:", movilidad)
+print("Vehículo extra:", vehiculo_extra)
+print("Registro:", registros)
