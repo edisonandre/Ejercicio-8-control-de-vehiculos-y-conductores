@@ -83,7 +83,7 @@ if registros:
 print()
 
 # 12. Si "Bicicleta" no está en vehiculos, agregarla
-if "Bicicleta" in vehiculos:
+if "Bicicleta" not in vehiculos:
     vehiculos.append("Bicicleta")
     print(vehiculos)
 
